@@ -24,6 +24,17 @@
   @return calc($px / $width * 100vw);
 }
 
+// FLEX
+@mixin flex_row ($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin flex_column ($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+}
+
 // WORD SKIP
 @mixin words_skip($line: 1) {
   display: -webkit-box;
