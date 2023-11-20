@@ -25,14 +25,29 @@
 }
 
 // FLEX
-@mixin flex_row ($direction: row) {
+@mixin flex_row($direction: row) {
   display: flex;
   flex-direction: $direction;
 }
 
-@mixin flex_column ($direction: column) {
+@mixin flex_column($direction: column) {
   display: flex;
   flex-direction: $direction;
+}
+
+// POSITION
+@function position($type: r) {
+  @if($type == "a") {
+    @return absolute;
+  } @else if($type == "s") {
+    @return static;
+  } @else if($type == "sck") {
+    @return sticky;
+  } @else if($type == "f") {
+    @return fixed;
+  } @else if($type == "r") {
+    @return relative;
+  }
 }
 
 // WORD SKIP
