@@ -36,21 +36,25 @@
 }
 
 // POSITION
-@function position($type: r) {
+@mixin position($type: r, $top, $right, $bottom, $left) {
   @if($type == "a") {
-    @return absolute;
+    position: absolute;
   } @else if($type == "s") {
-    @return static;
+    position: static;
   } @else if($type == "sck") {
-    @return sticky;
+    position: sticky;
   } @else if($type == "f") {
-    @return fixed;
+    position: fixed;
   } @else if($type == "r") {
-    @return relative;
+    position: relative;
   }
-}
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+} // @include position(a, 0, 0, null, 0);
 
-// WORD SKIP
+// WORD SKIP(...)
 @mixin words_skip($line: 1) {
   display: -webkit-box;
   -webkit-line-clamp: $line;
