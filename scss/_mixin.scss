@@ -1,5 +1,5 @@
 // RESPONSIVE
-@mixin access($kind) {
+@mixin enter($kind) {
   @if ($kind == "pc") {
     @media screen and (min-width: 1800px) {
       @content;
@@ -17,7 +17,7 @@
       @content;
     }
   }
-} // @include access(pc) {}
+} // @include enter(pc) {}
 
 // 해상도에 맞춘 비율
 @function ratio($px, $width) {
