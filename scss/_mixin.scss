@@ -5,11 +5,11 @@
       @content;
     }
   } @else if ($kind == "notebook") {
-    @media screen and (max-width: 1799px) and (min-width: 1200px) {
+    @media screen and (max-width: 1799px) {
       @content;
     }
   } @else if ($kind == "tablet") {
-    @media screen and (max-width: 1199px) and (min-width: 768px) {
+    @media screen and (max-width: 1199px) {
       @content;
     }
   } @else if ($kind == "mobile") {
@@ -35,8 +35,13 @@
   flex-direction: $direction;
 }
 
+// GRID
+@mixin grid() {
+  display: grid;
+}
+
 // POSITION
-@mixin position($type: r, $top, $right, $bottom, $left) {
+@mixin position($type: r, $top: null, $right: null, $bottom: null, $left: null) {
   @if($type == "a") {
     position: absolute;
   } @else if($type == "s") {
@@ -53,6 +58,27 @@
   bottom: $bottom;
   left: $left;
 } // @include position(a, 0, 0, null, 0);
+
+// SELECTION
+@mixin only($element) {
+  @if($element == "first") {
+    &:first-of-type {
+      @content;
+    }
+  } @else if($element == "last") {
+    &:last-of-type {
+      @content;
+    } 
+  } 
+  // @else if(type-of($element) == "number") {
+  //   &:nth-of-type(4) {
+  //     type: $element;
+  //     type: type-of($element);
+  //     type: nth-of-type($element);
+  //     @content;
+  //   } 
+  // }
+}
 
 // WORD SKIP(...)
 @mixin words_skip($line: 1) {
