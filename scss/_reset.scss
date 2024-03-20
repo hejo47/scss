@@ -6,8 +6,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {}
-
 p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
@@ -28,6 +26,14 @@ img {
   width: 100%;
 }
 
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  color: $textColor__default;
+}
+
 // SAFARI MOBILE BUTTON APPEARANCE
 input,
 textarea,
@@ -38,4 +44,20 @@ button {
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+}
+
+// INPUT TYPE NUMBER SPINNER APPEARANCE
+input {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+button {
+  cursor: pointer;
 }
