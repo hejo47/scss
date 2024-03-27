@@ -1,0 +1,29 @@
+.view {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+// REMOVABLE CODE START
+.element {
+  &__title {
+
+  }
+  &__content {
+    ul {
+      li {
+        &.active {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+
+
+
