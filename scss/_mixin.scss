@@ -1,23 +1,23 @@
 // RESPONSIVE
-@mixin enter($kind) {
-  @if ($kind == "pc") {
+@mixin device-query($device) {
+  @if ($device == "pc") {
     @media screen and (min-width: 1800px) {
       @content;
     }
-  } @else if ($kind == "notebook") {
+  } @else if ($device == "notebook") {
     @media screen and (max-width: 1799px) {
       @content;
     }
-  } @else if ($kind == "tablet") {
+  } @else if ($device == "tablet") {
     @media screen and (max-width: 1199px) {
       @content;
     }
-  } @else if ($kind == "mobile") {
+  } @else if ($device == "mobile") {
     @media screen and (max-width: 767px) {
       @content;
     }
   }
-} // @include enter(pc) {}
+} // @include device-query(pc) {}
 
 // 해상도에 맞춘 비율
 @function ratio($px, $width) {
@@ -25,19 +25,14 @@
 }
 
 // FLEX
-@mixin flex_row($direction: row) {
+@mixin flex-row($direction: row) {
   display: flex;
   flex-direction: $direction;
 }
 
-@mixin flex_column($direction: column) {
+@mixin flex-column($direction: column) {
   display: flex;
   flex-direction: $direction;
-}
-
-// GRID
-@mixin grid() {
-  display: grid;
 }
 
 // POSITION
@@ -46,7 +41,7 @@
     position: absolute;
   } @else if($type == "s") {
     position: static;
-  } @else if($type == "sck") {
+  } @else if($type == "st") {
     position: sticky;
   } @else if($type == "f") {
     position: fixed;
@@ -70,6 +65,7 @@
       @content;
     } 
   } 
+  // 아직 동작 안 함
   // @else if(type-of($element) == "number") {
   //   &:nth-of-type(4) {
   //     type: $element;
@@ -81,7 +77,7 @@
 }
 
 // WORD SKIP(...)
-@mixin words_skip($line: 1) {
+@mixin words-skip($line: 1) {
   display: -webkit-box;
   -webkit-line-clamp: $line;
   -webkit-box-orient: vertical;
@@ -89,7 +85,7 @@
 }
 
 // DISABLE SCROLL
-@mixin disable_scroll {
+@mixin disable-scroll {
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

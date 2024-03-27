@@ -1,15 +1,20 @@
 // COLOR
-$TEXTCOLOR__default: #181A1B;
+$text-color--default: #333;
 
-$POINTCOLOR__default: #FFF;
+$point-color--default: #FFF;
+$point-color--second: #FEFEFE;
 
-$BORDERCOLOR__default: #E7EBEE;
+$border-color--default: #E7EBEE;
 
 // FONT-SIZE
-$FONTSIZE__default: 18px;
+$font-size--default: 16px;
 
 // WIDTH
-$MIN_WIDTH: 460px;
+$width--min: 460px;
+$width--max: 1920px;
 
 // TRANSITION
-$TRANSITION: 0.2s linear all;
+$transition--default: 0.2s linear all;
+
+
+
