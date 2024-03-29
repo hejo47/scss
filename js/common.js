@@ -1,5 +1,35 @@
 window.onload = function(){
+  // MODAL
+  document.body.style.overflowY = "unset";
+  const modalButton = document.querySelectorAll("[data-view='modal']");
+  modalButton.forEach(function(elem){
+    elem.addEventListener("click", function(){
+      const modalID = this.dataset.modal;
+      document.querySelector(modalID).classList.add("active");
+      scrollForbid(modalID);
+      console.log(1);
+    });
+  });
 
+  const closeButton = document.querySelectorAll(".func__close");
+  closeButton.forEach(function(elem){
+    elem.addEventListener("click", function(){
+      modalClose(elem);
+    });
+  });
+}
+
+function modalClose(close){
+  const modal = close.closest(".modal__wrap");
+  modal.classList.remove("active");
+}
+
+function scrollForbid(id){
+  if(document.querySelector(id).classList.contains("active")){
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "unset";
+  }
 }
 
 // CLASS TOGGLE
@@ -24,3 +54,5 @@ addClassList.forEach(function(addClassElem, idx) {
     });
   });
 });
+
+
