@@ -164,7 +164,7 @@ button {
   transition: 0.2s linear all;
 }
 
-.select_wrap {
+.select__wrap {
   position: relative;
   width: 100%;
   margin-top: 20px;
@@ -174,22 +174,22 @@ button {
   padding-bottom: 30%;
 }
 
-.select_wrap label {
+.select__wrap label {
   display: block;
   font-size: 16px;
   color: gray;
   margin-bottom: 8px;
 }
-.select_wrap.select__view {
+.select__wrap.select__view {
   display: none;
 }
-.select_wrap.select__view.on {
+.select__wrap.select__view.on {
   display: block;
 }
-.select_wrap select {
+.select__wrap select {
   display: none;
 }
-.select_wrap .select {
+.select__wrap .select {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -199,14 +199,14 @@ button {
   background-position: right 2% center;
   background-size: 24px;
 }
-.header .select_wrap .select {
+.header .select__wrap .select {
   background-position: right 15px center;
 }
 
-.select_wrap .select ~ .select {
+.select__wrap .select ~ .select {
   margin-top: 10px;
 }
-.select_wrap .select ul {
+.select__wrap .select ul {
   position: absolute;
   top: 0;
   right: 0;
@@ -221,7 +221,7 @@ button {
   overflow: hidden;
   z-index: 10;
 }
-.select_wrap .select.active ul {
+.select__wrap .select.active ul {
   visibility: visible;
   opacity: 1;
   overflow-x: scroll;
@@ -231,13 +231,13 @@ button {
   max-height: 210px;
   overflow-y: scroll;
 }
-.select_wrap .select.active ul::-webkit-scrollbar {
+.select__wrap .select.active ul::-webkit-scrollbar {
   display: none;
 }
-.select_wrap .select__value {
+.select__wrap .select__value {
   font-weight: 600;
 }
-.select_wrap .select__item {
+.select__wrap .select__item {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -247,14 +247,14 @@ button {
   background-color: #FFF;
   font-weight: 500;
 }
-.select_wrap .select__item + .select__item {
+.select__wrap .select__item + .select__item {
   border-top: 1px solid #E7EBEE;
 }
-.select_wrap .select__item.selected {
+.select__wrap .select__item.selected {
   position: relative;
   font-weight: 700;
 }
-.select_wrap .select__item.selected::after {
+.select__wrap .select__item.selected::after {
   position: absolute;
   top: 50%;
   right: 16px;

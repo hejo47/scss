@@ -11,7 +11,7 @@ window.onload = function(){
     });
   });
 
-  const closeButton = document.querySelectorAll(".func__close");
+  const closeButton = document.querySelectorAll(".modal-close--fx");
   closeButton.forEach(function(elem){
     elem.addEventListener("click", function(){
       modalClose(elem);
@@ -34,9 +34,9 @@ function scrollForbid(id){
 
 // CLASS TOGGLE
 // CLASS TOGGLE (VAR)
-const clickElem = document.querySelector(".add-class--fx li");
+const clickElem = document.querySelector(".class-add--fx li");
 // CLASS TOGGLE (FUNC)
-const addClassList = document.querySelectorAll(".add-class--fx li");
+const addClassList = document.querySelectorAll(".class-add--fx li");
 addClassList.forEach(function(addClassElem, idx) {
   addClassElem.addEventListener("click", function(){
     if(addClassElem.classList.contains("active")) {
@@ -46,7 +46,7 @@ addClassList.forEach(function(addClassElem, idx) {
     }
     // ONLY CLASS (IF)
     // 이미 설정되어 있으면 걔 빼고 나한테 클래스 주라 
-    const activeClassList = document.querySelectorAll(".add-class--fx li");
+    const activeClassList = document.querySelectorAll(".class-add--fx li");
     activeClassList.forEach(function(activeClassElem, idx) {
       if(activeClassElem.classList.contains("active") && activeClassElem !== addClassElem) {
         activeClassElem.classList.remove("active");
