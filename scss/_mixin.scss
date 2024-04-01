@@ -94,5 +94,16 @@
   }
 }
 
-// PROJECT CUSTOM
+// VISIBLITY
+@mixin hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition--default;
+}
 
+@mixin visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+// PROJECT CUSTOM

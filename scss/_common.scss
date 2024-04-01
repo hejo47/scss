@@ -71,6 +71,102 @@
   }
 }
 
-
+.select_wrap {
+  @include position;
+  width: 100%;
+  margin: {
+      top: 20px;
+      bottom: 20px;
+  }
+  @at-root .stReg {
+      padding-bottom: 30%;
+  }
+  label {
+      display: block;
+      font-size: 16px;
+      color: gray;
+      margin-bottom: 8px;
+  }
+  &.select__view {
+      display: none;
+      &.on {
+          display: block;
+      }
+  }
+  select {
+      display: none;
+  }
+  .select {
+      @include flex_row;
+      justify-content: flex-start;
+      align-items: center;
+      background: {
+          image: url(/assets_2nd/img/icon/down_arrow.svg);
+          repeat: no-repeat;
+          position: right 2% center;
+          size: 24px;
+      }
+      @at-root .header #{&} {
+          background: {
+              position: right 15px center;
+          }
+      }
+      ~ .select {
+          margin-top: 10px;
+      }
+      ul {
+          @include position(a, 0, 0);
+          @include hidden;
+          width: 100%;
+          height: 0;
+          border-radius: 8px;
+          border: 1px solid $border-color--default;
+          background-color: #FFF;
+          overflow: hidden;
+          z-index: 10;
+      }
+      &.active {
+          ul {
+              @include visible;
+              @include disable_scroll;
+              height: unset;
+              max-height: 210px;
+              overflow-y: scroll;
+          }
+      }
+      &__value {
+          font-weight: 600;
+      }
+      &__item {
+          @include flex_row;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          padding: 20px 20px;
+          background-color: #FFF;
+          font-weight: 500;
+          & + .select__item {
+              border-top: 1px solid $border-color--default;
+          }
+          &.selected {
+              @include position;
+              font-weight: 700;
+              &::after {
+                  @include position(a, 50%, 16px);
+                  transform: translateY(-50%);
+                  width: 24px;
+                  height: 24px;
+                  content: "";
+                  background: {
+                      image: url(/assets_2nd/img/icon/check.svg);
+                      repeat: no-repeat;
+                      position: center;
+                      size: contain;
+                  }
+              }
+          }
+      }
+  }
+}
 
 
