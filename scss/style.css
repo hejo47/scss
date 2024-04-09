@@ -93,6 +93,10 @@ button {
   cursor: pointer;
 }
 
+:root {
+  --MARQUEE-SPANWIDTH: 0%;
+}
+
 .view {
   width: 100%;
 }
@@ -266,4 +270,36 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.marquee {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 20px;
+  animation: loop_text 8s linear infinite;
+}
+.marquee__wrap {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  overflow: hidden;
+  border: 1px solid;
+}
+@keyframes loop_text {
+  0% {
+    transform: translateX(-105%);
+  }
+  50% {
+    transform: translateX(var(--MARQUEE-SPANWIDTH));
+  }
+  50.1% {
+    transform: translateX(-105%);
+  }
+  100% {
+    transform: translateX(var(--MARQUEE-SPANWIDTH));
+  }
 }/*# sourceMappingURL=style.css.map */

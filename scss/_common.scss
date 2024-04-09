@@ -1,3 +1,7 @@
+:root {
+    --MARQUEE-SPANWIDTH: 0%;
+}
+
 .view {
   width: 100%;
 }
@@ -169,4 +173,37 @@
   }
 }
 
+.marquee {
+    @include flex-row;
+    column-gap: 15px;
+    width: fit-content;
+    height: 20px;
+    animation: loop_text 8s linear infinite;
+    &__wrap {
+        @include position;
+        width: 100%;
+        max-width: 200px;
+        overflow: hidden;
+        border: 1px solid;
+    }
+    span {
+    }
+}
 
+@keyframes loop_text {
+    0% {
+        transform: translateX(-105%);
+    }
+
+    50% {
+        transform: translateX(var(--MARQUEE-SPANWIDTH));
+    }
+
+    50.1% {
+        transform: translateX(-105%);
+    }
+
+    100% {
+        transform: translateX(var(--MARQUEE-SPANWIDTH));
+    }
+}
